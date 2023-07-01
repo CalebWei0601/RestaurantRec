@@ -4,7 +4,7 @@ import time
 import json
 
 # This file uses the Google places API to perform grid search to get a list of restaurants in Singapore
-API_KEY = 'AIzaSyDYvQH6vB-u-oyzGkjR8z2XFwHhOtW-IJ0'
+API_KEY = 'YOUR API KEY'
 BASE_URL = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json'
 
 # Singapore coordinates for grid search
