@@ -27,9 +27,9 @@ params = {
 results = []  
 
 #Flag for whether to perform the grid search or not
-api_flag = False
+search_flag = False
 
-if api_flag:
+if search_flag:
     for lat in range(int(lat_min * 100), int(lat_max * 100), 3):
         for lng in range(int(lng_min * 100), int(lng_max * 100), 3):
             # Time lag to be nice to Google API
@@ -79,16 +79,9 @@ if api_flag:
                             results.append(result)
                             visited.add(place_id)
 
+    # filter out Malaysian restaurants
+    results = [result for result in results if 'plus_code' in result and 'Singapore' in result['plus_code']['compound_code']]
+    
     # save results to a json file
     with open('restaurants.json', 'w') as file:
         json.dump(results, file)
-
-# These are for debugging purposes for now
-print(len(results))
-
-with open('restaurants.json') as res_data:
-    file_contents = res_data.read()
-
-results = json.loads(file_contents)
-for result in results:
-    print(result['name'])
