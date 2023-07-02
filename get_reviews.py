@@ -15,7 +15,7 @@ print(len(places))
 
 results = []
 # Your API key here
-API_KEY = 'AIzaSyDRgtdKXuSQW8WYiWMjmdGEr79CWhNnr2k'
+API_KEY = 'YOUR API KEY'
 BASE_URL = 'https://maps.googleapis.com/maps/api/place/details/json'
 
 search_flag = True
