@@ -11,7 +11,7 @@ with open('data/restaurants.json') as res_data:
 places = json.loads(file_contents)
 places = [place for place in places if 'plus_code' in place and 'Singapore' in place['plus_code']['compound_code']]
 
-results = []
+results = {}
 # Your API key here
 API_KEY = 'YOUR API KEY'
 BASE_URL = 'https://maps.googleapis.com/maps/api/place/details/json'
@@ -33,7 +33,7 @@ if search_flag:
 
         # Store in json
         data = response.json()
-        results.append(data)
+        results[place_id] = data
         time.sleep(0.3)
 
     with open('data/restaurants_indiv_info.json', 'w') as file:
