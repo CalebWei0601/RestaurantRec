@@ -83,5 +83,5 @@ if search_flag:
     results = [result for result in results if 'plus_code' in result and 'Singapore' in result['plus_code']['compound_code']]
     
     # save results to a json file
-    with open('data/restaurants.json', 'w') as file:
+    with open('RestaurantRec/data/restaurants.json', 'w') as file:
         json.dump(results, file)

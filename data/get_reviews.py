@@ -5,7 +5,7 @@ import time
 # to obtain the reviews that will later be used for modelling and predictions
 
 # Load restaurants from Google Places API
-with open('data/restaurants.json') as res_data:
+with open('RestaurantRec/data/restaurants.json') as res_data:
     file_contents = res_data.read()
 
 places = json.loads(file_contents)
@@ -36,6 +36,6 @@ if search_flag:
         results[place_id] = data
         time.sleep(0.3)
 
-    with open('data/restaurants_indiv_info.json', 'w') as file:
+    with open('RestaurantRec/data/restaurants_indiv_info.json', 'w') as file:
         json.dump(results, file)
 
