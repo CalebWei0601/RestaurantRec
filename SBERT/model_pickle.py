@@ -2,7 +2,7 @@ from sentence_transformers import SentenceTransformer, util
 import torch
 import json
 import pickle as pk
-from model_class import model
+from SBERT.model_class import model
 import gzip
 
 # We use the SBERT algorithm to embed each review into a vector space, and for each user query, return the closest embedding
